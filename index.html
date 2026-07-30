@@ -37,7 +37,7 @@
         <p class="hero-lead">給与や休日だけでは分からない。<br>職場の人、雰囲気、働き方まで見て選べる求人サイト。</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#stories">新着求人を見る <span>↗</span></a>
-          <a class="button button-glass" href="#category">職種から探す</a>
+          <a class="button button-glass" href="#wish">希望条件を登録する</a>
         </div>
       </div>
       <div class="ambassador"><small>JOB NAVIGATOR</small><strong>MIYAKO</strong><span>地元の仕事探しをご案内</span></div>
@@ -50,6 +50,36 @@
         <h2>求人票の向こう側まで、<br>見てから選べる。</h2>
       </div>
       <p>同じ職種、同じ給与でも、働きやすさは会社ごとに違います。みやこんじょ求人は、実際のスタッフ、職場の雰囲気、一日の流れまで届けます。応募は企業へ直接。人材派遣ではありません。</p>
+    </section>
+
+    <section class="wish-section" id="wish">
+      <div class="wish-intro">
+        <p class="eyebrow">YOUR IDEAL WORK</p>
+        <h2>求人が出るのを、<br>待たなくていい。</h2>
+        <p>希望する働き方を先に教えてください。条件に近い企業や、まだ表に出ていない求人が見つかった時にご案内します。</p>
+        <div class="wish-points"><span>登録無料</span><span>応募ではありません</span><span>相談だけでもOK</span></div>
+      </div>
+      <form class="wish-form" id="wishForm">
+        <div class="form-row">
+          <label><span>希望職種</span><input name="job" required placeholder="例：美容師、事務、介護、運送"></label>
+          <fieldset><legend>希望エリア</legend><div class="choice-group"><label><input type="checkbox" name="area" value="都城市"><span>都城市</span></label><label><input type="checkbox" name="area" value="三股町"><span>三股町</span></label><label><input type="checkbox" name="area" value="曽於市"><span>曽於市</span></label></div></fieldset>
+        </div>
+        <div class="form-row three">
+          <label><span>希望する雇用形態</span><select name="type"><option>正社員</option><option>パート・アルバイト</option><option>副業・業務委託</option><option>こだわらない</option></select></label>
+          <label><span>希望給与</span><input name="salary" placeholder="例：月給20万円以上"></label>
+          <label><span>働き始めたい時期</span><select name="start"><option>すぐに</option><option>1か月以内</option><option>3か月以内</option><option>良い仕事があれば</option></select></label>
+        </div>
+        <div class="form-row">
+          <label><span>希望勤務時間</span><input name="hours" placeholder="例：9時〜16時、残業なし"></label>
+          <label><span>希望休日</span><input name="holidays" placeholder="例：土日休み、週休2日"></label>
+        </div>
+        <label><span>譲れない条件・相談したいこと</span><textarea name="priority" rows="4" placeholder="例：子どもの送迎に間に合う時間、未経験でも始められる仕事"></textarea></label>
+        <div class="form-row">
+          <label><span>お名前</span><input name="name" required autocomplete="name" placeholder="例：山田 花子"></label>
+          <label><span>連絡先</span><input name="contact" required placeholder="LINE名・電話・メールのいずれか"></label>
+        </div>
+        <div class="form-submit"><p>送信するとメール画面が開きます。内容を確認して、そのまま送信してください。</p><button class="button button-primary" type="submit">希望条件を送る <span>↗</span></button></div>
+      </form>
     </section>
 
     <section class="category-section" id="category">
