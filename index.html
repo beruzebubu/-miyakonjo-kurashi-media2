@@ -20,7 +20,7 @@
     </a>
     <nav class="desktop-nav" aria-label="メインメニュー">
       <a href="#category">職種から探す</a>
-      <a href="#stories">新着求人</a>
+      <a href="#jobs">求人を見る</a>
       <a href="#about">選ばれる理由</a>
       <a class="nav-cta" href="#entry">仕事探しを相談</a>
     </nav>
@@ -35,8 +35,13 @@
         <p class="eyebrow">都城・三股・曽於の地域限定求人サイト</p>
         <h1>地元で働く。<br><span>ちゃんと選ぶ。</span></h1>
         <p class="hero-lead">給与や休日だけでは分からない。<br>職場の人、雰囲気、働き方まで見て選べる求人サイト。</p>
+        <form class="hero-search" id="heroSearch">
+          <label><span>キーワード</span><input id="heroKeyword" type="search" placeholder="美容、事務、未経験など"></label>
+          <label><span>エリア</span><select id="heroArea"><option value="">すべて</option><option>都城市</option><option>三股町</option><option>曽於市</option></select></label>
+          <button type="submit">求人を探す</button>
+        </form>
         <div class="hero-actions">
-          <a class="button button-primary" href="#stories">新着求人を見る <span>↗</span></a>
+          <a class="button button-primary" href="#jobs">求人を見る <span>↗</span></a>
           <a class="button button-glass" href="#wish">希望条件を登録する</a>
         </div>
       </div>
@@ -50,6 +55,45 @@
         <h2>求人票の向こう側まで、<br>見てから選べる。</h2>
       </div>
       <p>同じ職種、同じ給与でも、働きやすさは会社ごとに違います。みやこんじょ求人は、実際のスタッフ、職場の雰囲気、一日の流れまで届けます。応募は企業へ直接。人材派遣ではありません。</p>
+    </section>
+
+    <section class="category-section" id="category">
+      <div class="section-title">
+        <div><p class="eyebrow green">FIND YOUR JOB</p><h2>職種から求人を探す</h2></div>
+        <p>正社員・パート・アルバイト・副業。<br>自分に合う働き方を地域で見つける。</p>
+      </div>
+      <div class="category-grid">
+        <button class="category-card large beauty" type="button" data-category="美容・理容">
+          <span class="category-number">01</span><div><small>BEAUTY</small><h3>美容・理容</h3><p>スタイリスト・アシスタント・アイリスト</p></div><b>↗</b>
+        </button>
+        <button class="category-card work" type="button" data-category="建設・設備・運送">
+          <span class="category-number">02</span><div><small>CONSTRUCTION</small><h3>建設・設備・運送</h3><p>技術職・現場・ドライバー</p></div><b>↗</b>
+        </button>
+        <button class="category-card food" type="button" data-category="飲食・販売・接客">
+          <span class="category-number">03</span><div><small>SERVICE</small><h3>飲食・販売・接客</h3><p>飲食店・小売・宿泊・サービス</p></div><b>↗</b>
+        </button>
+        <button class="category-card text-card service" type="button" data-category="介護・医療・福祉">
+          <span class="category-number">04</span><div><small>CARE</small><h3>介護・医療・福祉</h3><p>介護職・看護・保育・支援</p></div><b>↗</b>
+        </button>
+        <button class="category-card text-card outing" type="button" data-category="事務・製造・その他">
+          <span class="category-number">05</span><div><small>OFFICE</small><h3>事務・営業・製造</h3><p>オフィス・工場・農業・その他</p></div><b>↗</b>
+        </button>
+      </div>
+    </section>
+
+    <section class="jobs-section" id="jobs">
+      <div class="section-title">
+        <div><p class="eyebrow green">LOCAL JOBS</p><h2>求人を見る</h2></div>
+        <p><strong id="resultCount">0</strong>件の求人を表示しています。</p>
+      </div>
+      <div class="job-filters">
+        <label><span>エリア</span><select id="areaFilter"><option value="">すべて</option><option>都城市</option><option>三股町</option><option>曽於市</option></select></label>
+        <label><span>雇用形態</span><select id="typeFilter"><option value="">すべて</option><option>正社員</option><option>アルバイト・パート</option><option>業務委託</option></select></label>
+        <label><span>職種</span><select id="categoryFilter"><option value="">すべて</option><option>美容・理容</option><option>建設・設備・運送</option><option>飲食・販売・接客</option><option>介護・医療・福祉</option><option>事務・製造・その他</option></select></label>
+        <button id="resetFilters" type="button">条件をリセット</button>
+      </div>
+      <div class="job-grid" id="jobList"></div>
+      <div class="empty-jobs" id="emptyJobs" hidden><h3>条件に合う求人がまだありません</h3><p>希望条件を登録すると、近い求人が出た時にご案内できます。</p><a href="#wish">希望条件を登録する</a></div>
     </section>
 
     <section class="wish-section" id="wish">
@@ -82,47 +126,6 @@
       </form>
     </section>
 
-    <section class="category-section" id="category">
-      <div class="section-title">
-        <div><p class="eyebrow green">FIND YOUR JOB</p><h2>職種から求人を探す</h2></div>
-        <p>正社員・パート・アルバイト・副業。<br>自分に合う働き方を地域で見つける。</p>
-      </div>
-      <div class="category-grid">
-        <a class="category-card large beauty" href="#stories">
-          <span class="category-number">01</span><div><small>BEAUTY</small><h3>美容・理容</h3><p>スタイリスト・アシスタント・アイリスト</p></div><b>↗</b>
-        </a>
-        <a class="category-card work" href="#stories">
-          <span class="category-number">02</span><div><small>CONSTRUCTION</small><h3>建設・設備・運送</h3><p>技術職・現場・ドライバー</p></div><b>↗</b>
-        </a>
-        <a class="category-card food" href="#stories">
-          <span class="category-number">03</span><div><small>SERVICE</small><h3>飲食・販売・接客</h3><p>飲食店・小売・宿泊・サービス</p></div><b>↗</b>
-        </a>
-        <a class="category-card text-card service" href="#stories">
-          <span class="category-number">04</span><div><small>CARE</small><h3>介護・医療・福祉</h3><p>介護職・看護・保育・支援</p></div><b>↗</b>
-        </a>
-        <a class="category-card text-card outing" href="#stories">
-          <span class="category-number">05</span><div><small>OFFICE</small><h3>事務・営業・製造</h3><p>オフィス・工場・農業・その他</p></div><b>↗</b>
-        </a>
-      </div>
-    </section>
-
-    <section class="stories" id="stories">
-      <div class="section-title light">
-        <div><p class="eyebrow">NEW LOCAL JOBS</p><h2>新着・注目の求人</h2></div>
-        <a href="#stories">すべての求人を見る <span>→</span></a>
-      </div>
-      <div class="story-grid">
-        <article class="story-feature">
-          <div class="photo-placeholder"><small>REAL COMPANY・REAL STAFF</small><strong>実際の会社・スタッフの写真を掲載</strong></div>
-          <div><span>PICK UP JOB</span><h3>会社ではなく、<br>一緒に働く人から選ぶ。</h3><p>求人情報を順次公開予定</p></div>
-        </article>
-        <div class="story-list">
-          <article><span>正社員 / 都城市</span><h3>美容・理容の求人を掲載準備中</h3><p>LINE応募・電話応募に対応予定</p></article>
-          <article><span>正社員 / 三股町</span><h3>建設・設備・技術職の求人を掲載準備中</h3><p>未経験可・経験者優遇など条件別に掲載</p></article>
-          <article><span>パート / 曽於市</span><h3>介護・飲食・販売の求人を掲載準備中</h3><p>勤務時間・休日・職場写真まで掲載</p></article>
-        </div>
-      </div>
-    </section>
 
     <section class="advertise" id="entry">
       <div class="ad-copy">
@@ -143,12 +146,13 @@
 
   <footer>
     <div class="footer-brand"><span class="logo-mark">み</span><div><strong>みやこんじょ求人</strong><p>都城・三股・曽於の地域限定求人サイト</p></div></div>
-    <div class="footer-links"><a href="#category">職種から探す</a><a href="#stories">新着求人</a><a href="#advertise">求人掲載相談</a></div>
+    <div class="footer-links"><a href="#category">職種から探す</a><a href="#jobs">求人を見る</a><a href="#advertise">求人掲載相談</a></div>
     <small>© 2026 MIYAKONJO LOCAL JOBS</small>
   </footer>
 
   <nav class="mobile-nav" aria-label="スマホメニュー">
-    <a href="#top"><span>⌂</span>ホーム</a><a href="#category"><span>⌕</span>職種</a><a href="#stories"><span>✦</span>求人</a><a href="#entry"><span>＋</span>相談</a>
+    <a href="#top"><span>⌂</span>ホーム</a><a href="#category"><span>⌕</span>職種</a><a href="#jobs"><span>✦</span>求人</a><a href="#wish"><span>＋</span>希望</a>
   </nav>
+  <dialog class="job-dialog" id="jobDialog"><div id="jobDialogContent"></div><button class="dialog-close" id="closeDialog" type="button" aria-label="閉じる">×</button></dialog>
 </body>
 </html>
