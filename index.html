@@ -3,9 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#244b3b">
-  <meta name="description" content="都城・三股・曽於の地域限定求人サイト。サイトから応募でき、採用後は掲載企業との直接雇用になります。">
-  <title>みやこんじょ求人｜都城・三股・曽於の地域限定求人サイト</title>
+  <meta name="theme-color" content="#173b31">
+  <meta name="description" content="都城市・三股町・曽於市の求人を、職場写真や働き方と一緒に紹介する地域密着求人メディア。正社員・パート・アルバイトの仕事を探せます。">
+  <link rel="canonical" href="https://beruzebubu.github.io/-miyakonjo-kurashi-media2/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="みやこんじょWORK｜都城・三股・曽於の求人">
+  <meta property="og:description" content="地元の仕事を、給与だけでなく人と職場から選べる地域求人メディア。">
+  <meta property="og:url" content="https://beruzebubu.github.io/-miyakonjo-kurashi-media2/">
+  <meta property="og:image" content="https://beruzebubu.github.io/-miyakonjo-kurashi-media2/assets/hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>都城・三股・曽於の求人｜正社員・パートを探す｜みやこんじょWORK</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
@@ -13,146 +21,122 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="header">
-    <a class="logo" href="#top" aria-label="みやこんじょ求人 ホーム">
-      <span class="logo-mark">み</span>
-      <span><strong>みやこんじょ求人</strong><small>MIYAKONOJO LOCAL JOBS</small></span>
-    </a>
-    <nav class="desktop-nav" aria-label="メインメニュー">
-      <a href="#category">職種から探す</a>
-      <a href="#jobs">求人を見る</a>
-      <a href="#about">選ばれる理由</a>
-      <a class="nav-cta" href="#entry">仕事探しを相談</a>
-    </nav>
-    <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <img class="hero-image" src="assets/hero.webp" alt="スマートフォンを手に、地域の街を眺める女性">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">都城・三股・曽於の地域限定求人サイト</p>
-        <h1>地元で働く。<br><span>ちゃんと選ぶ。</span></h1>
-        <p class="hero-lead">給与や休日だけでは分からない。<br>職場の人、雰囲気、働き方まで見て選べる求人サイト。</p>
-        <form class="hero-search" id="heroSearch">
-          <label><span>キーワード</span><input id="heroKeyword" type="search" placeholder="美容、事務、未経験など"></label>
-          <label><span>エリア</span><select id="heroArea"><option value="">すべて</option><option>都城市</option><option>三股町</option><option>曽於市</option></select></label>
-          <button type="submit">求人を探す</button>
-        </form>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#jobs">求人を見る <span>↗</span></a>
-          <a class="button button-glass" href="#wish">希望条件を登録する</a>
-        </div>
-      </div>
-      <div class="ambassador"><small>JOB NAVIGATOR</small><strong>MIYAKO</strong><span>地元の仕事探しをご案内</span></div>
-      <div class="hero-note"><span>SCROLL</span><i></i></div>
-    </section>
-
-    <section class="intro" id="about">
-      <div>
-        <p class="eyebrow green">WHY LOCAL JOBS?</p>
-        <h2>求人票の向こう側まで、<br>見てから選べる。</h2>
-      </div>
-      <p>同じ職種、同じ給与でも、働きやすさは会社ごとに違います。みやこんじょ求人は、実際のスタッフ、職場の雰囲気、一日の流れまで届けます。気になる求人には、このサイトから応募できます。</p>
-    </section>
-
-    <section class="category-section" id="category">
-      <div class="section-title">
-        <div><p class="eyebrow green">FIND YOUR JOB</p><h2>職種から求人を探す</h2></div>
-        <p>正社員・パート・アルバイト・副業。<br>自分に合う働き方を地域で見つける。</p>
-      </div>
-      <div class="category-grid">
-        <button class="category-card large beauty" type="button" data-category="美容・理容">
-          <span class="category-number">01</span><div><small>BEAUTY</small><h3>美容・理容</h3><p>スタイリスト・アシスタント・アイリスト</p></div><b>↗</b>
-        </button>
-        <button class="category-card work" type="button" data-category="建設・設備・運送">
-          <span class="category-number">02</span><div><small>CONSTRUCTION</small><h3>建設・設備・運送</h3><p>技術職・現場・ドライバー</p></div><b>↗</b>
-        </button>
-        <button class="category-card food" type="button" data-category="飲食・販売・接客">
-          <span class="category-number">03</span><div><small>SERVICE</small><h3>飲食・販売・接客</h3><p>飲食店・小売・宿泊・サービス</p></div><b>↗</b>
-        </button>
-        <button class="category-card text-card service" type="button" data-category="介護・医療・福祉">
-          <span class="category-number">04</span><div><small>CARE</small><h3>介護・医療・福祉</h3><p>介護職・看護・保育・支援</p></div><b>↗</b>
-        </button>
-        <button class="category-card text-card outing" type="button" data-category="事務・製造・その他">
-          <span class="category-number">05</span><div><small>OFFICE</small><h3>事務・営業・製造</h3><p>オフィス・工場・農業・その他</p></div><b>↗</b>
-        </button>
-      </div>
-    </section>
-
-    <section class="jobs-section" id="jobs">
-      <div class="section-title">
-        <div><p class="eyebrow green">LOCAL JOBS</p><h2>求人を見る</h2></div>
-        <p><strong id="resultCount">0</strong>件の求人を表示しています。</p>
-      </div>
-      <div class="job-filters">
-        <label><span>エリア</span><select id="areaFilter"><option value="">すべて</option><option>都城市</option><option>三股町</option><option>曽於市</option></select></label>
-        <label><span>雇用形態</span><select id="typeFilter"><option value="">すべて</option><option>正社員</option><option>アルバイト・パート</option><option>業務委託</option></select></label>
-        <label><span>職種</span><select id="categoryFilter"><option value="">すべて</option><option>美容・理容</option><option>建設・設備・運送</option><option>飲食・販売・接客</option><option>介護・医療・福祉</option><option>事務・製造・その他</option></select></label>
-        <button id="resetFilters" type="button">条件をリセット</button>
-      </div>
-      <div class="job-grid" id="jobList"></div>
-      <div class="empty-jobs" id="emptyJobs" hidden><h3>条件に合う求人がまだありません</h3><p>希望条件を登録すると、近い求人が出た時にご案内できます。</p><a href="#wish">希望条件を登録する</a></div>
-    </section>
-
-    <section class="wish-section" id="wish">
-      <div class="wish-intro">
-        <p class="eyebrow">YOUR IDEAL WORK</p>
-        <h2>求人が出るのを、<br>待たなくていい。</h2>
-        <p>希望する働き方を先に教えてください。条件に近い企業や、まだ表に出ていない求人が見つかった時にご案内します。</p>
-        <div class="wish-points"><span>登録無料</span><span>応募ではありません</span><span>相談だけでもOK</span></div>
-      </div>
-      <form class="wish-form" id="wishForm">
-        <div class="form-row">
-          <label><span>希望職種</span><input name="job" required placeholder="例：美容師、事務、介護、運送"></label>
-          <fieldset><legend>希望エリア</legend><div class="choice-group"><label><input type="checkbox" name="area" value="都城市"><span>都城市</span></label><label><input type="checkbox" name="area" value="三股町"><span>三股町</span></label><label><input type="checkbox" name="area" value="曽於市"><span>曽於市</span></label></div></fieldset>
-        </div>
-        <div class="form-row three">
-          <label><span>希望する雇用形態</span><select name="type"><option>正社員</option><option>パート・アルバイト</option><option>副業・業務委託</option><option>こだわらない</option></select></label>
-          <label><span>希望給与</span><input name="salary" placeholder="例：月給20万円以上"></label>
-          <label><span>働き始めたい時期</span><select name="start"><option>すぐに</option><option>1か月以内</option><option>3か月以内</option><option>良い仕事があれば</option></select></label>
-        </div>
-        <div class="form-row">
-          <label><span>希望勤務時間</span><input name="hours" placeholder="例：9時〜16時、残業なし"></label>
-          <label><span>希望休日</span><input name="holidays" placeholder="例：土日休み、週休2日"></label>
-        </div>
-        <label><span>譲れない条件・相談したいこと</span><textarea name="priority" rows="4" placeholder="例：子どもの送迎に間に合う時間、未経験でも始められる仕事"></textarea></label>
-        <div class="form-row">
-          <label><span>お名前</span><input name="name" required autocomplete="name" placeholder="例：山田 花子"></label>
-          <label><span>連絡先</span><input name="contact" required placeholder="LINE名・電話・メールのいずれか"></label>
-        </div>
-        <div class="form-submit"><p>送信するとメール画面が開きます。内容を確認して、そのまま送信してください。</p><button class="button button-primary" type="submit">希望条件を送る <span>↗</span></button></div>
-      </form>
-    </section>
-
-
-    <section class="advertise" id="entry">
-      <div class="ad-copy">
-        <p class="eyebrow green">FOR JOB SEEKERS</p>
-        <h2>まだ決めなくていい。<br><span>まず、知る。</span></h2>
-        <p>応募するか迷っていても大丈夫です。気になる働き方や条件を整理し、都城・三股・曽於の求人から合いそうな仕事を探せます。</p>
-        <ul><li>求職者の利用・応募は無料</li><li>サイトから簡単応募</li><li>採用後は掲載企業との直接雇用</li></ul>
-        <a class="button button-primary" href="mailto:weeds_skillup_0128@yahoo.co.jp?subject=仕事探しの相談">仕事探しを相談する <span>↗</span></a>
-      </div>
-      <div class="plans">
-        <div><small>LOCAL</small><h3>地域限定</h3><strong><b>3</b>エリア</strong><p>都城市・三股町・曽於市の求人だけ。通える範囲で探しやすい。</p></div>
-        <div class="recommended"><span>OUR STANDARD</span><small>REAL</small><h3>職場のリアル</h3><strong><b>写真</b>と人</strong><p>実際のスタッフ・仕事風景・一日の流れまで分かる。</p></div>
-        <div><small>ENTRY</small><h3>サイトから応募</h3><strong><b>0</b>円</strong><p>求職者の利用は無料。気になる求人を見つけたら、このサイトから応募できます。</p></div>
-      </div>
-    </section>
-    <section class="employer-cta" id="advertise"><p>都城・三股・曽於で採用を考えている企業・店舗の方へ</p><h2>求人掲載は無料。<br>採用できた時だけ料金発生。</h2><p>掲載から応募受付まで対応します。料金プランは現在準備中です。</p><a href="mailto:weeds_skillup_0128@yahoo.co.jp?subject=求人掲載の相談">求人掲載を相談する ↗</a></section>
-  </main>
-
-  <footer>
-    <div class="footer-brand"><span class="logo-mark">み</span><div><strong>みやこんじょ求人</strong><p>都城・三股・曽於の地域限定求人サイト</p></div></div>
-    <div class="footer-links"><a href="#category">職種から探す</a><a href="#jobs">求人を見る</a><a href="#advertise">求人掲載相談</a></div>
-    <small>© 2026 MIYAKONJO LOCAL JOBS</small>
-  </footer>
-
-  <nav class="mobile-nav" aria-label="スマホメニュー">
-    <a href="#top"><span>⌂</span>ホーム</a><a href="#category"><span>⌕</span>職種</a><a href="#jobs"><span>✦</span>求人</a><a href="#wish"><span>＋</span>希望</a>
+<a class="skip-link" href="#main">本文へ移動</a>
+<header class="header">
+  <a class="brand" href="#top" aria-label="みやこんじょWORK ホーム">
+    <span class="brand-mark">W</span>
+    <span><strong>みやこんじょWORK</strong><small>MIYAKONOJO LOCAL JOBS</small></span>
+  </a>
+  <nav class="desktop-nav" aria-label="メインメニュー">
+    <a href="#jobs">求人を見る</a>
+    <a href="#features">特徴</a>
+    <a href="#employers">企業の方へ</a>
+    <a class="nav-cta" href="mailto:weeds_skillup_0128@yahoo.co.jp?subject=みやこんじょWORK掲載相談">掲載を相談</a>
   </nav>
-  <dialog class="job-dialog" id="jobDialog"><div id="jobDialogContent"></div><button class="dialog-close" id="closeDialog" type="button" aria-label="閉じる">×</button></dialog>
+  <button class="menu-button" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <img class="hero-image" src="assets/hero.webp" width="1600" height="1067" fetchpriority="high" alt="地域で仕事を探す女性">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">都城・三股・曽於の地域限定求人</p>
+      <h1>地元の仕事を、<br><span>人と職場から選ぶ。</span></h1>
+      <p class="hero-lead">給与と休日だけでは分からない、実際の雰囲気や働く人まで紹介する地域密着型の求人メディアです。</p>
+      <form class="hero-search" id="heroSearch">
+        <label><span>キーワード</span><input id="heroKeyword" type="search" placeholder="美容、事務、未経験など"></label>
+        <label><span>エリア</span><select id="heroArea"><option value="">すべて</option><option>都城市</option><option>三股町</option><option>曽於市</option></select></label>
+        <button type="submit">求人を探す</button>
+      </form>
+      <div class="hero-actions">
+        <a class="button primary" href="#jobs">募集中の求人を見る</a>
+        <a class="button ghost" href="#employers">求人を掲載したい企業へ</a>
+      </div>
+      <p class="launch-note">現在、掲載企業を募集中です。公開求人は順次追加します。</p>
+    </div>
+  </section>
+
+  <section class="trust-strip" aria-label="サービス概要">
+    <div><strong>地域限定</strong><span>都城・三股・曽於</span></div>
+    <div><strong>求職者無料</strong><span>閲覧・応募は0円</span></div>
+    <div><strong>企業へ直接応募</strong><span>運営は個人情報を預かりません</span></div>
+  </section>
+
+  <section class="section intro" id="features">
+    <div class="section-heading">
+      <p class="eyebrow green">WHY MIYAKONJO WORK?</p>
+      <h2>求人票の向こう側まで、<br>見えるサイトに。</h2>
+    </div>
+    <div class="feature-grid">
+      <article><span>01</span><h3>地元だけ</h3><p>都城市・三股町・曽於市に絞り、通える範囲の仕事を探しやすくします。</p></article>
+      <article><span>02</span><h3>職場を見せる</h3><p>店舗・仕事風景・スタッフ・一日の流れを掲載し、入社後のミスマッチを減らします。</p></article>
+      <article><span>03</span><h3>直接つながる</h3><p>応募は掲載企業の電話・LINE・メールへ直接。運営側が選考や紹介を行いません。</p></article>
+    </div>
+  </section>
+
+  <section class="section jobs-section" id="jobs">
+    <div class="section-heading split">
+      <div><p class="eyebrow green">LOCAL JOBS</p><h2>募集中の求人</h2></div>
+      <p id="resultStatus" role="status" aria-live="polite"><strong id="resultCount">0</strong>件を表示しています。</p>
+    </div>
+    <div class="job-filters">
+      <label><span>キーワード</span><input id="keywordFilter" type="search" placeholder="職種・会社名"></label>
+      <label><span>エリア</span><select id="areaFilter"><option value="">すべて</option><option>都城市</option><option>三股町</option><option>曽於市</option></select></label>
+      <label><span>雇用形態</span><select id="typeFilter"><option value="">すべて</option><option>正社員</option><option>アルバイト・パート</option></select></label>
+      <button id="resetFilters" type="button">条件をリセット</button>
+    </div>
+    <div class="job-grid" id="jobList"></div>
+    <div class="empty-jobs" id="emptyJobs" hidden><h3>条件に合う求人はありません</h3><p>掲載求人は順次追加予定です。</p></div>
+    <p class="job-disclaimer">掲載内容は各企業から提供された情報です。応募・雇用契約は求職者と掲載企業の間で直接行われます。</p>
+  </section>
+
+  <section class="section media-section">
+    <div class="section-heading"><p class="eyebrow light">LOCAL RECRUIT MEDIA</p><h2>求人を載せるだけでなく、<br>地域に届ける。</h2></div>
+    <div class="media-grid">
+      <article><b>Instagram</b><h3>職場を短く見せる</h3><p>写真・動画・スタッフ紹介を投稿し、まだ転職サイトを見ていない人へ届けます。</p></article>
+      <article><b>LINE</b><h3>新着求人を知らせる</h3><p>職種や地域別の新着情報を発信し、サイトへの再訪を増やします。</p></article>
+      <article><b>Web</b><h3>詳しい条件を確認</h3><p>給与・休日・仕事内容・職場写真を一つの求人ページにまとめます。</p></article>
+    </div>
+  </section>
+
+  <section class="section employer-section" id="employers">
+    <div class="employer-copy">
+      <p class="eyebrow green">FOR EMPLOYERS</p>
+      <h2>最初の30社は、<br>3か月掲載無料。</h2>
+      <p>求人の数を先に揃え、地域で仕事を探す人が使えるサイトにするための立ち上げ限定プランです。採用成功報酬ではなく、求人広告の掲載料として運営します。</p>
+      <ul><li>求人ページ作成</li><li>写真・文章の掲載</li><li>Instagram用紹介投稿</li><li>応募先は企業へ直接設定</li></ul>
+      <a class="button primary" href="mailto:weeds_skillup_0128@yahoo.co.jp?subject=みやこんじょWORK掲載相談">無料掲載を相談する</a>
+    </div>
+    <div class="pricing-card">
+      <span class="price-label">LAUNCH PLAN</span>
+      <h3>立ち上げ30社限定</h3>
+      <p class="price"><strong>0</strong>円<small>／3か月</small></p>
+      <p>1社2求人まで。取材・撮影は日程と内容により相談。</p>
+      <hr>
+      <h3>通常掲載プラン</h3>
+      <p class="price small"><strong>5,500</strong>円<small>／月・税込</small></p>
+      <p>1社2求人まで。最低契約期間なし。採用の成否に関係なく掲載期間分のみ。</p>
+      <div class="option"><b>取材・撮影・原稿作成</b><span>初回 11,000円〜</span></div>
+    </div>
+  </section>
+
+  <section class="section start-section">
+    <div><p class="eyebrow green">SMALL START</p><h2>小さく始めて、<br>求人と閲覧者を増やす。</h2></div>
+    <div class="steps">
+      <article><span>1</span><h3>30社を掲載</h3><p>知り合い企業から実在する求人を集め、写真と条件を揃えます。</p></article>
+      <article><span>2</span><h3>SNSで毎日発信</h3><p>求人だけでなく、働く人・職場・地域の仕事情報を継続発信します。</p></article>
+      <article><span>3</span><h3>反応を計測</h3><p>閲覧数・企業への連絡数・人気職種を見て、掲載プランを調整します。</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-brand"><span class="brand-mark">W</span><div><strong>みやこんじょWORK</strong><p>都城・三股・曽於の地域求人メディア</p></div></div>
+  <nav class="footer-links"><a href="#jobs">求人を見る</a><a href="#employers">企業の方へ</a><a href="operator.html">運営者情報</a><a href="privacy.html">プライバシーポリシー</a><a href="terms.html">利用規約</a></nav>
+  <p class="legal-note">本サイトは求人情報を提供する広告媒体です。職業紹介、求職者の選別・推薦、採用のあっせんは行いません。</p>
+  <small>© 2026 MIYAKONJO WORK</small>
+</footer>
+<nav class="mobile-nav" aria-label="モバイルメニュー"><a href="#top"><span>⌂</span>トップ</a><a href="#jobs"><span>⌕</span>求人</a><a href="#features"><span>◎</span>特徴</a><a href="#employers"><span>＋</span>掲載</a></nav>
 </body>
 </html>
