@@ -17,57 +17,63 @@ $('#resetFilters')?.addEventListener('click',()=>{if($('#keywordFilter'))$('#key
 $('#heroSearch')?.addEventListener('submit',e=>{e.preventDefault();if($('#keywordFilter'))$('#keywordFilter').value=$('#heroKeyword')?.value||'';if($('#areaFilter'))$('#areaFilter').value=$('#heroArea')?.value||'';apply();$('#jobs')?.scrollIntoView({behavior:'smooth'})});
 renderJobs();
 
-// 職種カードを、実際に働いている人物が見える写真へ変更
+// 承認済みの日本人モデル写真を職種カードへ反映
 (()=>{
   const style=document.createElement('style');
   style.textContent=`
+    .category-grid{gap:14px!important}
     .category-card{
+      position:relative!important;
+      overflow:hidden!important;
       border:0!important;
       border-radius:18px!important;
       background-size:cover!important;
-      background-position:center!important;
       background-repeat:no-repeat!important;
+      background-position:center!important;
       box-shadow:0 8px 24px rgba(26,38,31,.12)!important;
+      isolation:isolate!important;
     }
     .category-card::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg,rgba(10,20,15,.03) 36%,rgba(8,18,13,.78) 100%);
+      background:linear-gradient(180deg,rgba(8,18,13,.02) 30%,rgba(8,18,13,.72) 100%);
       pointer-events:none;
       z-index:1;
     }
     .category-card>*{position:relative;z-index:2!important}
     .category-card.beauty{
-      background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=88')!important;
-      background-position:center 38%!important;
+      background-image:url('assets/category-beauty.svg')!important;
+      background-position:center 42%!important;
     }
     .category-card.work{
-      background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=88')!important;
-      background-position:center!important;
+      background-image:url('assets/category-construction.svg')!important;
+      background-position:center 35%!important;
     }
     .category-card.food{
-      background-image:url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=88')!important;
-      background-position:center!important;
+      background-image:url('assets/category-service.svg')!important;
+      background-position:center 38%!important;
     }
     .category-card.service{
-      background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=88')!important;
-      background-position:center!important;
+      background-image:url('assets/category-care.svg')!important;
+      background-position:center 42%!important;
     }
     .category-card.outing{
-      background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=88')!important;
-      background-position:center!important;
+      background-image:url('assets/category-office.svg')!important;
+      background-position:center 38%!important;
     }
     @media(max-width:900px){
-      .category-grid{gap:14px!important}
-      .category-card.large{min-height:390px!important}
-      .category-card:not(.large){min-height:260px!important}
-      .category-card h3{font-size:clamp(19px,5vw,25px)!important;line-height:1.45!important}
+      .category-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+      .category-card.large{grid-column:1/-1!important;min-height:330px!important}
+      .category-card:not(.large){min-height:245px!important}
+      .category-card h3{font-size:clamp(19px,5vw,25px)!important;line-height:1.35!important}
       .category-card p{display:none!important}
     }
     @media(max-width:440px){
-      .category-card.large{min-height:380px!important}
-      .category-card:not(.large){min-height:245px!important}
+      .category-grid{gap:10px!important}
+      .category-card.large{min-height:300px!important}
+      .category-card:not(.large){min-height:220px!important}
+      .category-card h3{font-size:20px!important}
     }
   `;
   document.head.appendChild(style);
