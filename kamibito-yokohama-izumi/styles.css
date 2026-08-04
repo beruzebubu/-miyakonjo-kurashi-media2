@@ -56,3 +56,7 @@ body{font-weight:500}
 /* Contact navigation stays visible while the form scrolls */
 .dialog-shell{padding-top:0}.dialog-nav{position:sticky;z-index:8;top:0;display:flex;justify-content:space-between;gap:8px;margin:0 -14px 28px;padding:14px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.dialog-back,.dialog-home{position:static;min-height:44px;border-radius:999px;border:1px solid var(--line);padding:8px 16px;background:var(--cream);color:var(--green);font-size:16px;font-weight:800;cursor:pointer}.dialog-back span,.dialog-home span{font-size:11px}.dialog-home{background:var(--green);border-color:var(--green);color:#fff}
 @media(max-width:520px){.dialog-nav{margin:0 -10px 22px;padding:10px}.dialog-back,.dialog-home{padding:8px 13px}.dialog-home span{font-size:10px}}
+
+/* Mobile hero uses normal flow so buttons and the facility card never overlap */
+@media(max-width:900px){.hero{height:auto;min-height:0;padding:112px 20px 30px;display:flex;flex-direction:column}.hero>img,.hero-overlay{position:absolute}.hero-copy{position:relative;left:auto;right:auto;top:auto;transform:none;max-width:620px}.hero-card{position:relative;left:auto;right:auto;bottom:auto;width:100%;margin:30px 0 0;padding:20px}.gateway{margin-top:0}}
+@media(max-width:520px){.hero{padding:104px 20px 26px}.hero-copy{transform:none}.hero h1{font-size:47px}.hero-actions{width:100%}.hero-card{margin-top:24px}.hero-card strong{font-size:18px}}
