@@ -15,6 +15,8 @@ $$('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{
 
 const dialog=$('#contactDialog');
 const form=$('#contactForm');
+let contactHistoryActive=false;
+let closingFromBrowser=false;
 const titles={
   facility:['施設訪問を直接相談','人数・日程・施術環境を確認して、担当者からご連絡します。'],
   personal:['自宅訪問を直接相談','ご本人の状態や希望メニューを確認して、担当者からご連絡します。'],
@@ -36,12 +38,29 @@ function setContactType(type='general'){
 $$('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>{
   setContactType(button.dataset.openContact);
   if(typeof dialog.showModal==='function')dialog.showModal();
+  if(!contactHistoryActive){
+    history.pushState({contactDialog:true},'',location.href);
+    contactHistoryActive=true;
+  }
   document.body.classList.add('no-scroll');
 }));
 
-dialog?.addEventListener('close',()=>document.body.classList.remove('no-scroll'));
+dialog?.addEventListener('close',()=>{
+  document.body.classList.remove('no-scroll');
+  if(contactHistoryActive&&!closingFromBrowser)history.back();
+  contactHistoryActive=false;
+  closingFromBrowser=false;
+});
 dialog?.addEventListener('click',event=>{
-  if(event.target===dialog){dialog.close();document.body.classList.remove('no-scroll')}
+  if(event.target===dialog)dialog.close();
+});
+
+window.addEventListener('popstate',()=>{
+  if(dialog?.open&&contactHistoryActive){
+    closingFromBrowser=true;
+    contactHistoryActive=false;
+    dialog.close();
+  }
 });
 
 form?.addEventListener('submit',event=>{

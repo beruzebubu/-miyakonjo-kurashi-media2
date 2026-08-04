@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#17493f">
+  <meta name="theme-color" content="#fffaf2">
   <meta name="description" content="KamiBito横浜泉店。横浜市泉区を中心に施設・病院・ご自宅へ訪問する理美容サービス。施設提携、個人予約、訪問美容師求人を直接相談できます。">
   <title>KamiBito横浜泉店｜訪問美容・施設提携・美容師求人</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,6 +72,18 @@
       <button class="btn light" type="button" data-open-contact="facility">施設訪問の相談・見積り <span>↗</span></button>
     </section>
 
+    <section class="price" id="price">
+      <div class="section-head"><div><p class="kicker green">PRICE</p><h2>訪問料金</h2></div><p>まとまった人数で、もっと利用しやすく。<br>施設担当者さまから直接ご相談いただけます。</p></div>
+      <div class="price-grid">
+        <article class="price-main"><small>施設訪問カット</small><h3>3〜4名</h3><p><strong>3,000</strong><span>円／1名</span></p></article>
+        <article class="price-main popular"><b>BEST VALUE</b><small>施設訪問カット</small><h3>5名以上</h3><p><strong>2,500</strong><span>円／1名</span></p></article>
+        <article><small>OPTION MENU</small><h3>カラー</h3><p><strong>6,000</strong><span>円</span></p></article>
+        <article><small>OPTION MENU</small><h3>パーマ</h3><p><strong>6,000</strong><span>円</span></p></article>
+      </div>
+      <p class="price-note">※料金は税込表記です。訪問条件、施術内容、髪の長さなどにより追加料金が発生する場合は事前にご案内します。</p>
+      <button class="btn price-btn" type="button" data-open-contact="facility">施設の人数・日程を相談する <span>→</span></button>
+    </section>
+
     <section class="area" id="area">
       <div class="area-copy"><p class="kicker green">VISIT AREA</p><h2>横浜泉店の<br>訪問エリア</h2><p>下記以外の地域も、距離や人数によって対応できる場合があります。まずは直接ご相談ください。</p><button class="text-link" type="button" data-open-contact="general">対応地域を確認する →</button></div>
       <div class="area-list"><strong>横浜市</strong><p><span>泉区</span><span>戸塚区</span><span>瀬谷区</span><span>旭区</span></p><strong>神奈川県央・湘南</strong><p><span>藤沢市</span><span>大和市</span><span>綾瀬市</span></p><small>泉区：和泉町・中田・岡津・緑園など<br>藤沢市：湘南台・長後など</small></div>
@@ -86,10 +98,10 @@
       <div class="recruit-lead"><p class="kicker">CAREER</p><h2>美容師を、<br>続けられる働き方へ。</h2><p>訪問美容は、年齢やライフスタイルが変わっても技術を活かせる仕事です。売上だけでなく、経験・対応力・貢献が収入へ返る環境をつくります。</p><div class="recruit-badges"><span>訪問未経験OK</span><span>ブランクOK</span><span>直行直帰OK</span><span>年齢不問</span></div></div>
       <div class="recruit-detail">
         <div class="salary-card"><small>正社員</small><p>月給</p><strong>22<em>万円〜</em></strong><span>9:00〜17:00／残業ほぼなし／月8日休み</span></div>
-        <div class="salary-card accent"><small>パート・業務委託</small><p>技術と稼働に応じた</p><strong>高<em>還元</em></strong><span>勤務日数・時間・還元条件は直接相談</span></div>
+        <div class="salary-card accent"><small>パート・業務委託</small><p>施術売上</p><strong>60<em>%還元</em></strong><span>技術と稼働が、そのまま収入につながる働き方</span></div>
         <dl><div><dt>仕事内容</dt><dd>個人宅・介護施設・病院・デイサービスでの訪問理美容</dd></div><div><dt>応募資格</dt><dd>美容師免許／美容師の実務経験（訪問経験は不問）</dd></div><div><dt>歓迎</dt><dd>車両持ち込み可能な方、介護関連資格をお持ちの方</dd></div><div><dt>勤務地</dt><dd>横浜市周辺・案件により直行直帰</dd></div></dl>
         <button class="btn recruit-btn" type="button" data-open-contact="recruit">求人へ直接応募・質問する <span>↗</span></button>
-        <p class="condition-note">※パート・業務委託の給与・還元率は、経験や働き方を確認したうえで個別に提示します。</p>
+        <p class="condition-note">※業務形態、交通費、材料費などの詳細条件は応募時に直接ご説明します。</p>
       </div>
     </section>
 
@@ -106,7 +118,7 @@
 
   <dialog class="contact-dialog" id="contactDialog">
     <form method="dialog" class="dialog-shell" id="contactForm">
-      <button class="dialog-close" value="cancel" aria-label="閉じる">×</button>
+      <button class="dialog-back" value="cancel" aria-label="相談フォームを閉じてページへ戻る">← <span>戻る</span></button>
       <div class="dialog-heading"><p class="kicker green">CONTACT</p><h2 id="dialogTitle">直接相談する</h2><p id="dialogLead">内容を確認後、担当者から直接ご連絡します。</p></div>
       <input type="hidden" name="contactType" id="contactType" value="general">
       <div class="form-grid">
