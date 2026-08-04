@@ -18,6 +18,7 @@ const form=$('#contactForm');
 const areaRadios=$$('input[name="area"]');
 const otherAreaWrap=$('.other-area');
 const otherAreaInput=$('#otherArea');
+const preferredDate=$('#preferredDate');
 let contactHistoryActive=false;
 let closingFromBrowser=false;
 let closeDestination='previous';
@@ -28,6 +29,25 @@ const titles={
   recruit:['求人へ直接応募・質問','応募前の質問だけでも大丈夫です。希望する働き方をお知らせください。'],
   general:['横浜泉店へ直接相談','内容を確認後、担当者から直接ご連絡します。']
 };
+
+function toLocalDateValue(date){
+  const year=date.getFullYear();
+  const month=String(date.getMonth()+1).padStart(2,'0');
+  const day=String(date.getDate()).padStart(2,'0');
+  return `${year}-${month}-${day}`;
+}
+
+function setBookingDateRange(){
+  if(!preferredDate)return;
+  const minDate=new Date();
+  minDate.setHours(12,0,0,0);
+  minDate.setDate(minDate.getDate()+5);
+  const maxDate=new Date(minDate);
+  maxDate.setDate(maxDate.getDate()+90);
+  preferredDate.min=toLocalDateValue(minDate);
+  preferredDate.max=toLocalDateValue(maxDate);
+}
+setBookingDateRange();
 
 function setContactType(type='general'){
   const [title,lead]=titles[type]||titles.general;
@@ -112,6 +132,8 @@ form?.addEventListener('submit',event=>{
     '希望エリア':data.get('area')==='その他'?data.get('otherArea'):data.get('area'),
     '予定人数':data.get('people'),
     '希望メニュー':data.get('menu'),
+    '訪問希望日':data.get('preferredDate'),
+    '希望時間':data.get('preferredTime'),
     '希望する働き方':data.get('workType'),
     '美容師経験':data.get('experience'),
     '相談内容':data.get('message')
