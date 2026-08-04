@@ -15,7 +15,7 @@ $$('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{
 
 const dialog=$('#contactDialog');
 const form=$('#contactForm');
-const areaSelect=$('#areaSelect');
+const areaRadios=$$('input[name="area"]');
 const otherAreaWrap=$('.other-area');
 const otherAreaInput=$('#otherArea');
 let contactHistoryActive=false;
@@ -37,18 +37,19 @@ function setContactType(type='general'){
   $$('.personal-only').forEach(el=>el.hidden=type!=='personal');
   $$('.service-only').forEach(el=>el.hidden=!['facility','personal','general'].includes(type));
   $$('.recruit-only').forEach(el=>el.hidden=type!=='recruit');
-  const showOther=type!=='recruit'&&areaSelect.value==='その他';
+  const selectedArea=$('input[name="area"]:checked')?.value||'';
+  const showOther=type!=='recruit'&&selectedArea==='その他';
   otherAreaWrap.hidden=!showOther;
   otherAreaInput.required=showOther;
 }
 
-areaSelect?.addEventListener('change',()=>{
-  const isOther=areaSelect.value==='その他';
+areaRadios.forEach(radio=>radio.addEventListener('change',()=>{
+  const isOther=radio.checked&&radio.value==='その他';
   otherAreaWrap.hidden=!isOther;
   otherAreaInput.required=isOther;
   if(!isOther)otherAreaInput.value='';
   if(isOther)setTimeout(()=>otherAreaInput.focus(),80);
-});
+}));
 
 $$('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>{
   setContactType(button.dataset.openContact);
