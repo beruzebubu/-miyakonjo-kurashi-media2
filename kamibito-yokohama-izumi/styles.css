@@ -34,3 +34,9 @@ body{font-weight:500}
 .dialog-shell input,.dialog-shell select,.dialog-shell textarea{color:#173f36;font-weight:600;border-width:2px}
 .dialog-shell input::placeholder,.dialog-shell textarea::placeholder{color:#718982;opacity:1}
 @media(max-width:900px){.hero-lead{font-size:14px}.gateway p,.service-grid p,.flow p,.area-copy>p,.direct-contact>p:not(.kicker){font-size:13px}.price-note{font-size:11px;line-height:1.7}}
+
+/* Keep the full contact form reachable on mobile */
+.contact-dialog{overflow:hidden}
+.dialog-shell{max-height:calc(100svh - 24px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.dialog-shell select{min-height:54px;background-color:#fff}
+@media(max-width:900px){.contact-dialog{width:calc(100% - 20px);max-height:calc(100svh - 20px)}.dialog-shell{max-height:calc(100svh - 20px);padding-bottom:calc(38px + env(safe-area-inset-bottom))}}

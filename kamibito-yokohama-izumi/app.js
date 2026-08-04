@@ -15,6 +15,9 @@ $$('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{
 
 const dialog=$('#contactDialog');
 const form=$('#contactForm');
+const areaSelect=$('#areaSelect');
+const otherAreaWrap=$('.other-area');
+const otherAreaInput=$('#otherArea');
 let contactHistoryActive=false;
 let closingFromBrowser=false;
 let returnToTopOnClose=false;
@@ -34,7 +37,18 @@ function setContactType(type='general'){
   $$('.personal-only').forEach(el=>el.hidden=type!=='personal');
   $$('.service-only').forEach(el=>el.hidden=!['facility','personal','general'].includes(type));
   $$('.recruit-only').forEach(el=>el.hidden=type!=='recruit');
+  const showOther=type!=='recruit'&&areaSelect.value==='その他';
+  otherAreaWrap.hidden=!showOther;
+  otherAreaInput.required=showOther;
 }
+
+areaSelect?.addEventListener('change',()=>{
+  const isOther=areaSelect.value==='その他';
+  otherAreaWrap.hidden=!isOther;
+  otherAreaInput.required=isOther;
+  if(!isOther)otherAreaInput.value='';
+  if(isOther)setTimeout(()=>otherAreaInput.focus(),80);
+});
 
 $$('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>{
   setContactType(button.dataset.openContact);
@@ -83,7 +97,7 @@ form?.addEventListener('submit',event=>{
     'お名前':data.get('name'),
     '電話番号':data.get('phone'),
     'メール':data.get('email'),
-    '希望エリア':data.get('area'),
+    '希望エリア':data.get('area')==='その他'?data.get('otherArea'):data.get('area'),
     '予定人数':data.get('people'),
     '希望メニュー':data.get('menu'),
     '希望する働き方':data.get('workType'),

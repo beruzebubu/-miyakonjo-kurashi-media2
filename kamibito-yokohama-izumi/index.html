@@ -138,7 +138,8 @@
         <label><span>お名前 *</span><input name="name" required autocomplete="name"></label>
         <label><span>電話番号 *</span><input name="phone" required inputmode="tel" autocomplete="tel"></label>
         <label><span>メールアドレス</span><input name="email" type="email" autocomplete="email"></label>
-        <label class="service-only"><span>訪問希望エリア</span><input name="area" placeholder="例：横浜市泉区"></label>
+        <label class="service-only"><span>訪問希望エリア</span><select name="area" id="areaSelect"><option value="">地域を選択してください</option><option>横浜市</option><option>横浜市泉区</option><option>横浜市戸塚区</option><option>横浜市瀬谷区</option><option>横浜市旭区</option><option>藤沢市</option><option>大和市</option><option>綾瀬市</option><option value="その他">その他</option></select></label>
+        <label class="service-only other-area" hidden><span>その他の訪問希望地域</span><input name="otherArea" id="otherArea" placeholder="市区町村をご入力ください"></label>
         <label class="facility-only"><span>予定人数</span><input name="people" placeholder="例：10名程度"></label>
         <label class="personal-only"><span>希望メニュー</span><select name="menu"><option>カット</option><option>カット＋シャンプー</option><option>カラー</option><option>パーマ</option><option>相談して決めたい</option></select></label>
         <label class="recruit-only"><span>希望する働き方</span><select name="workType"><option>正社員</option><option>パート</option><option>業務委託</option><option>相談して決めたい</option></select></label>
