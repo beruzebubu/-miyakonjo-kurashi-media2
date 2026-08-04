@@ -20,7 +20,8 @@ const otherAreaWrap=$('.other-area');
 const otherAreaInput=$('#otherArea');
 let contactHistoryActive=false;
 let closingFromBrowser=false;
-let returnToTopOnClose=false;
+let closeDestination='previous';
+let openingScrollY=0;
 const titles={
   facility:['施設訪問を直接相談','人数・日程・施術環境を確認して、担当者からご連絡します。'],
   personal:['自宅訪問を直接相談','ご本人の状態や希望メニューを確認して、担当者からご連絡します。'],
@@ -52,9 +53,10 @@ areaRadios.forEach(radio=>radio.addEventListener('change',()=>{
 }));
 
 $$('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>{
+  openingScrollY=window.scrollY;
+  closeDestination='previous';
   setContactType(button.dataset.openContact);
   if(typeof dialog.showModal==='function')dialog.showModal();
-  returnToTopOnClose=true;
   if(!contactHistoryActive){
     history.pushState({contactDialog:true},'',location.href);
     contactHistoryActive=true;
@@ -68,11 +70,9 @@ dialog?.addEventListener('close',()=>{
   if(contactHistoryActive&&!closingFromBrowser)history.back();
   contactHistoryActive=false;
   closingFromBrowser=false;
-  if(returnToTopOnClose){
-    returnToTopOnClose=false;
-    requestAnimationFrame(()=>window.scrollTo({top:0,left:0,behavior:'instant'}));
-    setTimeout(()=>window.scrollTo({top:0,left:0,behavior:'instant'}),180);
-  }
+  const targetY=closeDestination==='top'?0:openingScrollY;
+  requestAnimationFrame(()=>window.scrollTo({top:targetY,left:0,behavior:'instant'}));
+  setTimeout(()=>window.scrollTo({top:targetY,left:0,behavior:'instant'}),180);
 });
 dialog?.addEventListener('click',event=>{
   if(event.target===dialog)dialog.close();
@@ -80,10 +80,21 @@ dialog?.addEventListener('click',event=>{
 
 window.addEventListener('popstate',()=>{
   if(dialog?.open&&contactHistoryActive){
+    closeDestination='previous';
     closingFromBrowser=true;
     contactHistoryActive=false;
     dialog.close();
   }
+});
+
+$('[data-dialog-back]')?.addEventListener('click',()=>{
+  closeDestination='previous';
+  dialog.close();
+});
+
+$('[data-dialog-home]')?.addEventListener('click',()=>{
+  closeDestination='top';
+  dialog.close();
 });
 
 form?.addEventListener('submit',event=>{
