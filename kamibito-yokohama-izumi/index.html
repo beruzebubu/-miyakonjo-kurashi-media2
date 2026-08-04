@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260804-3">
+  <script src="app.js?v=20260804-3" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -171,7 +171,7 @@
         <label class="facility-only"><span>予定人数</span><input name="people" placeholder="例：10名程度"></label>
         <label class="personal-only"><span>希望メニュー</span><select name="menu"><option>カット</option><option>カット＋シャンプー</option><option>カラー</option><option>パーマ</option><option>相談して決めたい</option></select></label>
         <div class="service-only booking-date"><label><span>訪問希望日</span><input name="preferredDate" id="preferredDate" type="date"></label><small>最短5日後から選べます</small></div>
-        <fieldset class="service-only time-picker"><legend>希望時間</legend><div><label><input type="radio" name="preferredTime" value="9:00"><span>9:00</span></label><label><input type="radio" name="preferredTime" value="10:00"><span>10:00</span></label><label><input type="radio" name="preferredTime" value="11:00"><span>11:00</span></label><label><input type="radio" name="preferredTime" value="13:00"><span>13:00</span></label><label><input type="radio" name="preferredTime" value="14:00"><span>14:00</span></label><label><input type="radio" name="preferredTime" value="15:00"><span>15:00</span></label><label><input type="radio" name="preferredTime" value="16:00"><span>16:00</span></label><label><input type="radio" name="preferredTime" value="時間相談"><span>時間相談</span></label></div></fieldset>
+        <fieldset class="service-only time-picker"><legend>希望時間</legend><p>午前</p><div><label><input type="radio" name="preferredTime" value="9:00"><span>9:00</span></label><label><input type="radio" name="preferredTime" value="10:00"><span>10:00</span></label><label><input type="radio" name="preferredTime" value="11:00"><span>11:00</span></label></div><p>午後</p><div><label><input type="radio" name="preferredTime" value="13:00"><span>13:00</span></label><label><input type="radio" name="preferredTime" value="14:00"><span>14:00</span></label><label><input type="radio" name="preferredTime" value="15:00"><span>15:00</span></label><label><input type="radio" name="preferredTime" value="16:00"><span>16:00</span></label><label class="time-consult"><input type="radio" name="preferredTime" value="時間相談"><span>時間を相談</span></label></div></fieldset>
         <label class="recruit-only"><span>希望する働き方</span><select name="workType"><option>正社員</option><option>パート</option><option>業務委託</option><option>相談して決めたい</option></select></label>
         <label class="recruit-only"><span>美容師経験年数</span><input name="experience" placeholder="例：10年・ブランク3年"></label>
       </div>
