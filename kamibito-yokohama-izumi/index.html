@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260804-4">
-  <script src="app.js?v=20260804-4" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260804-5">
+  <script src="app.js?v=20260804-5" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -169,7 +169,7 @@
         <fieldset class="service-only area-picker"><legend>訪問希望エリア</legend><div><label><input type="radio" name="area" value="横浜市"><span>横浜市</span></label><label><input type="radio" name="area" value="横浜市泉区"><span>泉区</span></label><label><input type="radio" name="area" value="横浜市戸塚区"><span>戸塚区</span></label><label><input type="radio" name="area" value="横浜市瀬谷区"><span>瀬谷区</span></label><label><input type="radio" name="area" value="横浜市旭区"><span>旭区</span></label><label><input type="radio" name="area" value="藤沢市"><span>藤沢市</span></label><label><input type="radio" name="area" value="大和市"><span>大和市</span></label><label><input type="radio" name="area" value="綾瀬市"><span>綾瀬市</span></label><label><input type="radio" name="area" value="その他"><span>その他</span></label></div></fieldset>
         <label class="service-only other-area" hidden><span>その他の訪問希望地域</span><input name="otherArea" id="otherArea" placeholder="市区町村をご入力ください"></label>
         <label class="facility-only"><span>予定人数</span><input name="people" placeholder="例：10名程度"></label>
-        <label class="personal-only"><span>希望メニュー</span><select name="menu"><option>カット</option><option>カット＋シャンプー</option><option>カラー</option><option>パーマ</option><option>相談して決めたい</option></select></label>
+        <fieldset class="personal-only menu-picker"><legend>希望メニュー <small>複数選択できます</small></legend><div><label><input type="checkbox" name="menu" value="カット"><span>✂ カット</span></label><label><input type="checkbox" name="menu" value="シャンプー"><span>♨ シャンプー</span></label><label><input type="checkbox" name="menu" value="カラー"><span>● カラー<small>6,000円</small></span></label><label><input type="checkbox" name="menu" value="パーマ"><span>〰 パーマ<small>6,000円</small></span></label><label class="menu-consult"><input type="checkbox" name="menu" value="相談して決めたい"><span>相談して決めたい</span></label></div></fieldset>
         <div class="service-only booking-date"><label><span>訪問希望日</span><input name="preferredDate" id="preferredDate" type="date"></label><small>最短5日後から選べます</small></div>
         <fieldset class="service-only time-picker visit-shifts"><legend>希望する訪問枠</legend><div><label><input type="radio" name="preferredTime" value="午前便（10:00〜11:00開始）"><span><b>午前便</b><strong>10:00〜11:00開始</strong><small>1件目の訪問枠</small></span></label><label><input type="radio" name="preferredTime" value="午後便（13:00〜14:00開始）"><span><b>午後便</b><strong>13:00〜14:00開始</strong><small>2件目の訪問枠</small></span></label><label class="time-consult"><input type="radio" name="preferredTime" value="どちらでも可"><span><b>どちらでも可</b><small>空いている枠を希望</small></span></label></div><p class="shift-note">施術人数・移動時間を確認後、正確な開始時刻をご連絡します。</p></fieldset>
         <label class="recruit-only"><span>希望する働き方</span><select name="workType"><option>正社員</option><option>パート</option><option>業務委託</option><option>相談して決めたい</option></select></label>

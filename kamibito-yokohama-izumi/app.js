@@ -131,7 +131,7 @@ form?.addEventListener('submit',event=>{
     'メール':data.get('email'),
     '希望エリア':data.get('area')==='その他'?data.get('otherArea'):data.get('area'),
     '予定人数':data.get('people'),
-    '希望メニュー':data.get('menu'),
+    '希望メニュー':data.getAll('menu').join('＋'),
     '訪問希望日':data.get('preferredDate'),
     '希望時間':data.get('preferredTime'),
     '希望する働き方':data.get('workType'),
