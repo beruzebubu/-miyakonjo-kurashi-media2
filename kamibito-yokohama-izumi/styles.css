@@ -23,3 +23,14 @@ footer{background:#0e241e;color:#fff;padding:60px 6vw 90px;display:grid;grid-tem
 .dialog-shell{padding:78px 42px 42px}.dialog-back{position:absolute;left:22px;top:18px;min-width:104px;height:43px;border-radius:999px;border:1px solid var(--line);background:var(--cream);color:var(--green);font-size:16px;font-weight:800;cursor:pointer}.dialog-back span{font-size:12px}
 @media(max-width:900px){.price{padding:75px 14px}.price-grid{grid-template-columns:1fr 1fr}.dialog-shell{padding:72px 20px 25px}}
 @media(max-width:520px){.price-grid{grid-template-columns:1fr}.price-grid article{padding:27px 22px}.price-grid strong{font-size:43px}}
+
+/* Improve readability on mobile and bright displays */
+body{font-weight:500}
+:root{--muted:#405f57;--line:#c8dad4}
+.hero-lead,.gateway p,.statement>div:last-child,.section-head>p,.service-grid p,.area-copy>p,.flow p,.recruit-lead>p:not(.kicker),.direct-contact>p:not(.kicker),.dialog-heading>p:last-child{font-weight:600}
+.facility-points span,.recruit dd,.condition-note,footer p,.image-note{font-weight:500;color:rgba(255,255,255,.82)}
+.brand small,.hero-card span,.area-list small,.price-note,.phone small,.form-note{font-weight:600}
+.dialog-shell label>span,.consent span{color:#173f36;font-weight:700!important}
+.dialog-shell input,.dialog-shell select,.dialog-shell textarea{color:#173f36;font-weight:600;border-width:2px}
+.dialog-shell input::placeholder,.dialog-shell textarea::placeholder{color:#718982;opacity:1}
+@media(max-width:900px){.hero-lead{font-size:14px}.gateway p,.service-grid p,.flow p,.area-copy>p,.direct-contact>p:not(.kicker){font-size:13px}.price-note{font-size:11px;line-height:1.7}}
