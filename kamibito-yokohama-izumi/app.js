@@ -15,10 +15,11 @@ $$('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{
 
 const dialog=$('#contactDialog');
 const form=$('#contactForm');
-const areaRadios=$$('input[name="area"]');
-const otherAreaWrap=$('.other-area');
-const otherAreaInput=$('#otherArea');
 const preferredDate=$('#preferredDate');
+const postalCode=$('#postalCode');
+const postalSearch=$('#postalSearch');
+const postalStatus=$('#postalStatus');
+const addressInput=$('#address');
 let contactHistoryActive=false;
 let closingFromBrowser=false;
 let closeDestination='previous';
@@ -58,19 +59,30 @@ function setContactType(type='general'){
   $$('.personal-only').forEach(el=>el.hidden=type!=='personal');
   $$('.service-only').forEach(el=>el.hidden=!['facility','personal','general'].includes(type));
   $$('.recruit-only').forEach(el=>el.hidden=type!=='recruit');
-  const selectedArea=$('input[name="area"]:checked')?.value||'';
-  const showOther=type!=='recruit'&&selectedArea==='その他';
-  otherAreaWrap.hidden=!showOther;
-  otherAreaInput.required=showOther;
 }
 
-areaRadios.forEach(radio=>radio.addEventListener('change',()=>{
-  const isOther=radio.checked&&radio.value==='その他';
-  otherAreaWrap.hidden=!isOther;
-  otherAreaInput.required=isOther;
-  if(!isOther)otherAreaInput.value='';
-  if(isOther)setTimeout(()=>otherAreaInput.focus(),80);
-}));
+async function searchPostalCode(){
+  const zipcode=(postalCode?.value||'').replace(/\D/g,'');
+  if(zipcode.length!==7){postalStatus.textContent='郵便番号を7桁で入力してください';return}
+  postalStatus.textContent='住所を検索中…';
+  try{
+    const response=await fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zipcode}`);
+    const data=await response.json();
+    const result=data.results?.[0];
+    if(!result){postalStatus.textContent='住所が見つかりません。住所を直接入力してください';addressInput.focus();return}
+    addressInput.value=`${result.address1}${result.address2}${result.address3}`;
+    postalStatus.textContent='住所を入力しました';
+    document.querySelector('input[name="addressDetail"]')?.focus();
+  }catch{
+    postalStatus.textContent='検索できませんでした。住所を直接入力してください';
+  }
+}
+postalSearch?.addEventListener('click',searchPostalCode);
+postalCode?.addEventListener('input',()=>{
+  const digits=postalCode.value.replace(/\D/g,'').slice(0,7);
+  postalCode.value=digits;
+  if(digits.length===7)searchPostalCode();
+});
 
 $$('[data-open-contact]').forEach(button=>button.addEventListener('click',()=>{
   openingScrollY=window.scrollY;
@@ -129,7 +141,8 @@ form?.addEventListener('submit',event=>{
     'お名前':data.get('name'),
     '電話番号':data.get('phone'),
     'メール':data.get('email'),
-    '希望エリア':data.get('area')==='その他'?data.get('otherArea'):data.get('area'),
+    '郵便番号':data.get('postalCode'),
+    '住所':`${data.get('address')||''}${data.get('addressDetail')||''}`,
     '予定人数':data.get('people'),
     '希望メニュー':data.getAll('menu').join('＋'),
     '訪問希望日':data.get('preferredDate'),

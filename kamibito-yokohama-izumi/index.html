@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260804-5">
-  <script src="app.js?v=20260804-5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260804-6">
+  <script src="app.js?v=20260804-6" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -131,7 +131,7 @@
 
     <section class="flow">
       <div class="section-head"><div><p class="kicker green">HOW IT WORKS</p><h2>ご利用の流れ</h2></div></div>
-      <ol><li><b>01</b><div><h3>直接相談</h3><p>施設・個人専用フォーム、または電話からご連絡ください。</p></div></li><li><b>02</b><div><h3>内容確認</h3><p>場所、人数、身体の状態、希望メニュー、日程を確認します。</p></div></li><li><b>03</b><div><h3>日程・料金のご案内</h3><p>担当者から直接連絡し、訪問内容を確定します。</p></div></li><li><b>04</b><div><h3>訪問・施術</h3><p>必要な道具を持参し、体調と安全に配慮して施術します。</p></div></li></ol>
+      <ol><li><b>01</b><div><h3>選ぶ</h3><p>住所・メニュー・日時を選択。</p></div></li><li><b>02</b><div><h3>確認</h3><p>担当者から料金と時間をご連絡。</p></div></li><li><b>03</b><div><h3>訪問</h3><p>道具を持って伺います。</p></div></li></ol>
     </section>
 
     <section class="recruit" id="recruit">
@@ -165,20 +165,20 @@
         <label class="facility-only"><span>施設・法人名</span><input name="organization" placeholder="例：〇〇介護施設"></label>
         <label><span>お名前 *</span><input name="name" required autocomplete="name"></label>
         <label><span>電話番号 *</span><input name="phone" required inputmode="tel" autocomplete="tel"></label>
-        <label><span>メールアドレス</span><input name="email" type="email" autocomplete="email"></label>
-        <fieldset class="service-only area-picker"><legend>訪問希望エリア</legend><div><label><input type="radio" name="area" value="横浜市"><span>横浜市</span></label><label><input type="radio" name="area" value="横浜市泉区"><span>泉区</span></label><label><input type="radio" name="area" value="横浜市戸塚区"><span>戸塚区</span></label><label><input type="radio" name="area" value="横浜市瀬谷区"><span>瀬谷区</span></label><label><input type="radio" name="area" value="横浜市旭区"><span>旭区</span></label><label><input type="radio" name="area" value="藤沢市"><span>藤沢市</span></label><label><input type="radio" name="area" value="大和市"><span>大和市</span></label><label><input type="radio" name="area" value="綾瀬市"><span>綾瀬市</span></label><label><input type="radio" name="area" value="その他"><span>その他</span></label></div></fieldset>
-        <label class="service-only other-area" hidden><span>その他の訪問希望地域</span><input name="otherArea" id="otherArea" placeholder="市区町村をご入力ください"></label>
-        <label class="facility-only"><span>予定人数</span><input name="people" placeholder="例：10名程度"></label>
+        <label class="recruit-only"><span>メールアドレス</span><input name="email" type="email" autocomplete="email"></label>
+        <div class="service-only address-block"><label><span>郵便番号</span><div class="postal-row"><input name="postalCode" id="postalCode" inputmode="numeric" autocomplete="postal-code" maxlength="8" placeholder="例：2450000"><button type="button" id="postalSearch">住所検索</button></div></label><small id="postalStatus">7桁で住所を自動入力</small></div>
+        <label class="service-only address-wide"><span>住所</span><input name="address" id="address" autocomplete="address-level1" placeholder="郵便番号から自動入力"></label>
+        <label class="service-only address-wide"><span>番地・施設名</span><input name="addressDetail" autocomplete="street-address" placeholder="例：3-10-2 〇〇ホーム"></label>
+        <fieldset class="facility-only people-picker"><legend>予定人数</legend><div><label><input type="radio" name="people" value="3〜4名"><span>3〜4名</span></label><label><input type="radio" name="people" value="5〜9名"><span>5〜9名</span></label><label><input type="radio" name="people" value="10名以上"><span>10名以上</span></label><label><input type="radio" name="people" value="未定"><span>未定</span></label></div></fieldset>
         <fieldset class="personal-only menu-picker"><legend>希望メニュー <small>複数選択できます</small></legend><div><label><input type="checkbox" name="menu" value="カット"><span>✂ カット</span></label><label><input type="checkbox" name="menu" value="シャンプー"><span>♨ シャンプー</span></label><label><input type="checkbox" name="menu" value="カラー"><span>● カラー<small>6,000円</small></span></label><label><input type="checkbox" name="menu" value="パーマ"><span>〰 パーマ<small>6,000円</small></span></label><label class="menu-consult"><input type="checkbox" name="menu" value="相談して決めたい"><span>相談して決めたい</span></label></div></fieldset>
         <div class="service-only booking-date"><label><span>訪問希望日</span><input name="preferredDate" id="preferredDate" type="date"></label><small>最短5日後から選べます</small></div>
         <fieldset class="service-only time-picker visit-shifts"><legend>希望する訪問枠</legend><div><label><input type="radio" name="preferredTime" value="午前便（10:00〜11:00開始）"><span><b>午前便</b><strong>10:00〜11:00開始</strong><small>1件目の訪問枠</small></span></label><label><input type="radio" name="preferredTime" value="午後便（13:00〜14:00開始）"><span><b>午後便</b><strong>13:00〜14:00開始</strong><small>2件目の訪問枠</small></span></label><label class="time-consult"><input type="radio" name="preferredTime" value="どちらでも可"><span><b>どちらでも可</b><small>空いている枠を希望</small></span></label></div><p class="shift-note">施術人数・移動時間を確認後、正確な開始時刻をご連絡します。</p></fieldset>
         <label class="recruit-only"><span>希望する働き方</span><select name="workType"><option>正社員</option><option>パート</option><option>業務委託</option><option>相談して決めたい</option></select></label>
         <label class="recruit-only"><span>美容師経験年数</span><input name="experience" placeholder="例：10年・ブランク3年"></label>
       </div>
-      <label><span>相談内容 *</span><textarea name="message" required rows="5" placeholder="ご希望や確認したいことをご記入ください"></textarea></label>
-      <label class="consent"><input type="checkbox" required><span>入力内容を連絡・相談対応のために利用することに同意します。</span></label>
-      <button class="form-submit" type="submit">この内容で直接相談する <span>↗</span></button>
-      <p class="form-note">希望日時は仮予約です。送信後、担当者からの確認連絡をもって予約確定となります。</p>
+      <details class="optional-note"><summary>補足があれば入力</summary><label><textarea name="message" rows="3" placeholder="身体の状態や希望など"></textarea></label></details>
+      <button class="form-submit" type="submit">仮予約を送る <span>→</span></button>
+      <p class="form-note">送信すると連絡用メールが開きます。担当者の確認連絡で予約確定です。送信により入力内容の連絡利用に同意したものとします。</p>
     </form>
   </dialog>
 </body>
