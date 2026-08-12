@@ -109,3 +109,22 @@ body{background:#fffdf5;color:var(--ink)}
 footer{background:#6c5b27;color:#fffdf0}.mobile-nav{background:rgba(255,251,226,.97);border-color:#e6d99c}.mobile-nav button,.mobile-nav a{color:#6b612c}
 .contact-dialog{background:#fffdf5}.contact-dialog::backdrop{background:rgba(72,60,25,.62)}.dialog-nav{background:rgba(255,251,226,.97)}.dialog-home{background:#c6a83f;border-color:#c6a83f}.dialog-back{background:#fff6c7;color:#6e6832}.dialog-shell input,.dialog-shell select,.dialog-shell textarea{background:#fffef8;color:#493f27}.menu-picker input:checked+span,.people-picker input:checked+span{background:#fff0a5;color:#675d28;border-color:#c6a83f}.menu-picker input:checked+span:after,.dialog-shell .time-picker input[type="radio"]:checked+span{background:#c6a83f;border-color:#c6a83f}
 @media(max-width:900px){.desktop-nav.open{background:#8a752e}.hero-overlay{background:linear-gradient(90deg,rgba(76,60,20,.82),rgba(107,86,29,.48) 74%,rgba(255,229,138,.08)),linear-gradient(0deg,rgba(70,54,18,.28),transparent)} }
+
+/* Final light-theme lock: remove every large dark-green panel */
+.facility-band,.recruit,.gateway-recruit,.women-team{background:#ffe899!important;background-image:none!important;color:#493f27!important}
+.facility-band .kicker,.facility-band h2,.facility-band h3,.facility-band strong,.facility-band p,.facility-band span,.facility-band b,
+.recruit .kicker,.recruit h2,.recruit h3,.recruit p,.recruit span,.recruit dt,.recruit dd,
+.gateway-recruit small,.gateway-recruit h2,.gateway-recruit p,.gateway-recruit a,
+.women-team .kicker,.women-team h2,.women-team h3,.women-team p,.women-team b{color:#493f27!important}
+.facility-points p,.recruit dl>div,.women-benefits article{border-color:rgba(73,63,39,.22)!important}
+.recruit-badges span{border-color:rgba(73,63,39,.36)!important;background:rgba(255,255,255,.32)}
+.salary-card,.salary-card.accent{background:#fffaf0!important;color:#493f27!important;border:1px solid #e2c75e}
+.salary-card.accent{background:#ffd96a!important}
+.recruit-btn,.btn.light,.women-cta{background:#fffdf6!important;color:#5d5227!important}
+footer{background:#f2d575!important;color:#493f27!important}footer p,footer small,footer a,footer button{color:#493f27!important}
+.hero{background:#ffe899}.hero-overlay{background:linear-gradient(90deg,rgba(255,232,153,.92) 0%,rgba(255,232,153,.72) 48%,rgba(255,232,153,.18) 82%)!important}.hero,.site-header{color:#493f27!important}.site-header{border-color:rgba(73,63,39,.22)}.menu-toggle span{background:#493f27!important}
+.hero h1,.hero-lead,.hero .kicker,.image-note{color:#493f27!important;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+.character-badge{background:rgba(255,248,214,.92)!important;color:#493f27!important;border-left-color:#d5ad29}.character-badge small{color:#8b6b12!important}
+.hero-tags span{background:rgba(255,253,240,.78)!important;border-color:rgba(73,63,39,.32)!important;color:#493f27!important}
+.btn.glass{background:#fff9dc!important;border-color:#bca654!important;color:#493f27!important}.btn.primary{background:#d7b43e!important;color:#fff!important}
+@media(max-width:900px){.hero-overlay{background:linear-gradient(90deg,rgba(255,232,153,.94),rgba(255,232,153,.7) 72%,rgba(255,232,153,.22))!important}.desktop-nav.open{background:#ffe899!important;color:#493f27!important}}
