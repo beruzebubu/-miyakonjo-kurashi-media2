@@ -87,3 +87,25 @@ body{font-weight:500}
 /* Licensed official character visual cropped from the supplied post */
 .character-badge{width:min(390px,100%);min-height:152px;padding:10px 15px 10px 145px;position:relative;display:flex;align-items:center;overflow:hidden;background:rgba(8,43,35,.7)}.official-character-photo{position:absolute;left:0;top:0;width:132px;height:176px;background-image:url("assets/kamibito-official-character.jpeg");background-repeat:no-repeat;background-size:443px 591px;background-position:-256px -48px}
 @media(max-width:520px){.character-badge{min-height:145px;padding-left:136px}.official-character-photo{width:124px;height:165px;background-size:410px 546px;background-position:-237px -44px}.character-badge strong{font-size:18px}}
+
+/* 2026-08-12: warm pastel-yellow theme */
+:root{--green:#6e6832;--green2:#938a3d;--mint:#fff3a9;--cream:#fffbea;--sand:#f8e6a6;--ink:#493f27;--muted:#6f654b;--line:#e8dca8;--orange:#d98758;--yellow:#ffe58a;--shadow:0 22px 60px rgba(107,91,35,.14)}
+body{background:#fffdf5;color:var(--ink)}
+.hero-overlay{background:linear-gradient(90deg,rgba(83,66,23,.78) 0%,rgba(111,91,35,.55) 38%,rgba(255,229,138,.08) 72%),linear-gradient(0deg,rgba(76,59,20,.22),transparent 55%)}
+.brand-mark{background:#fff4ad;color:#625b27}.header-cta{background:rgba(255,244,173,.16);border-color:rgba(255,248,214,.76)}
+.character-badge{background:rgba(76,62,24,.68);border-left-color:#ffe58a}.character-badge small{color:#ffe58a}
+.hero-tags span{background:rgba(255,238,154,.16);border-color:rgba(255,246,206,.7)}
+.btn.primary{background:#fff3ad;color:#554e22}.hero-card{background:rgba(255,252,233,.95)}
+.brand-trust{background:#fff2ad;border-color:#ead58b}.brand-trust a{color:#6e6832;border-color:#d8c16e}
+.gateway,.local-specialist,.direct-contact,.area{background:#fffdf5}.gateway article{border-color:#eadfb0}.gateway article>span{color:#eee6c8}.gateway-recruit{background:#f4d66f!important;color:#493f27}.gateway-recruit>span{color:rgba(73,63,39,.09)!important}.gateway-recruit small,.gateway-recruit p{color:#6d6037}.gateway-recruit a{border-color:#75662e}
+.statement{background:#fff9dc}.service,.facility-solutions{background:linear-gradient(135deg,#fff8cf,#fffdf4)}
+.service-grid article,.solution-grid article{background:#fffef8;border-color:#e8dca8}.service-icon{background:#ffed98;color:#6e6832}
+.facility-band{background:linear-gradient(145deg,#ffe58a,#f3ce60);color:#493f27}.facility-points p{border-color:rgba(88,72,26,.22)}.facility-points b{color:#8b762d}.facility-points span{color:#655a3c}.btn.light{background:#fffdf5;color:#615925}
+.local-regions{background:linear-gradient(135deg,#fff0a1,#fffbea)}.women-team{background:#ffe49a;color:#493f27}.women-benefits article{border-color:rgba(91,72,24,.22)}.women-benefits b{color:#9b7a25}.women-benefits p{color:#655a3c}.women-cta{background:#fffdf5;color:#6e5b20}
+.price{background:#fff9dc}.price-grid article{background:#fffef8;box-shadow:0 14px 35px rgba(107,91,35,.08)}.price-grid article.price-main{background:#fff0a5}.price-grid article.popular{background:#ffd96a}
+.area-list,.flow{background:#fff8d7}.area-list span{background:#fffef8}.flow li{border-color:#e2d39b}
+.recruit{background:linear-gradient(145deg,#f8dc7b,#edc75d);color:#493f27}.recruit-lead>p:not(.kicker),.recruit dd,.condition-note{color:#655a3c}.recruit-badges span,.recruit dl>div{border-color:rgba(91,72,24,.23)}.salary-card{background:#fffdf5}.salary-card.accent{background:#ffe58a}.recruit-btn{background:#fffdf5;color:#615925}
+.direct-contact button,.form-submit,.postal-row button{background:#c6a83f;color:#fff}.phone{border-color:#dfd09a}
+footer{background:#6c5b27;color:#fffdf0}.mobile-nav{background:rgba(255,251,226,.97);border-color:#e6d99c}.mobile-nav button,.mobile-nav a{color:#6b612c}
+.contact-dialog{background:#fffdf5}.contact-dialog::backdrop{background:rgba(72,60,25,.62)}.dialog-nav{background:rgba(255,251,226,.97)}.dialog-home{background:#c6a83f;border-color:#c6a83f}.dialog-back{background:#fff6c7;color:#6e6832}.dialog-shell input,.dialog-shell select,.dialog-shell textarea{background:#fffef8;color:#493f27}.menu-picker input:checked+span,.people-picker input:checked+span{background:#fff0a5;color:#675d28;border-color:#c6a83f}.menu-picker input:checked+span:after,.dialog-shell .time-picker input[type="radio"]:checked+span{background:#c6a83f;border-color:#c6a83f}
+@media(max-width:900px){.desktop-nav.open{background:#8a752e}.hero-overlay{background:linear-gradient(90deg,rgba(76,60,20,.82),rgba(107,86,29,.48) 74%,rgba(255,229,138,.08)),linear-gradient(0deg,rgba(70,54,18,.28),transparent)} }
