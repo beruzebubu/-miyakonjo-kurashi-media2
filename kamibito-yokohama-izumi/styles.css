@@ -149,3 +149,17 @@ footer{background:#243746!important;color:#fff!important}footer p,footer small,f
 /* Bright hand-drawn official-character portrait */
 .official-character-photo{background-image:url("assets/yada-dessin.webp")!important;background-size:cover!important;background-position:center 18%!important;background-repeat:no-repeat!important}
 @media(max-width:520px){.official-character-photo{background-size:cover!important;background-position:center 18%!important}}
+
+/* Objective UX pass: shorter page, clearer actions, larger tap targets */
+.gateway article{min-height:285px;padding-top:44px;padding-bottom:40px}.statement,.local-specialist,.women-team,.facility-band,.facility-solutions,.price,.area,.flow,.recruit,.direct-contact{padding-top:86px;padding-bottom:86px}.service{padding-top:86px;padding-bottom:90px}.women-team{align-items:center}.service-grid article{min-height:285px}.solution-grid article{min-height:205px}.flow{padding-bottom:78px}.flow ol{max-width:1120px}.flow li{min-height:175px}.desktop-nav a{display:flex;align-items:center;min-height:44px}.hero-card button,.gateway button,.gateway a,.text-link,footer a,footer button{min-height:44px;align-items:center}.header-cta{min-height:44px}
+@media(max-width:900px){
+  .gateway article{padding:30px 22px;min-height:auto}.gateway p{margin-bottom:18px}
+  .statement,.local-specialist,.women-team,.facility-band,.facility-solutions,.price,.area,.flow,.recruit,.direct-contact{padding-top:58px!important;padding-bottom:58px!important}
+  .service{padding-top:58px!important;padding-bottom:62px!important}
+  .statement h2,.local-title h2,.women-team h2,.facility-band h2,.area h2,.recruit h2,.direct-contact h2{font-size:36px!important;line-height:1.38!important}
+  .section-head h2{font-size:39px!important}.section-head{margin-bottom:23px!important}
+  .service-grid article{min-height:230px;padding:18px 16px}.service-icon{margin:12px 0 20px}
+  .solution-grid article{min-height:185px}.flow li{min-height:130px}
+  .mobile-nav button,.mobile-nav a{min-height:50px;display:grid;place-items:center;align-content:center}
+}
+@media(max-width:460px){.service-grid article{min-height:auto;padding:20px 18px}.service-icon{margin:8px 0 15px}.solution-grid article{min-height:auto}.hero h1{font-size:43px!important;line-height:1.12!important}.hero-lead br{display:none}}
